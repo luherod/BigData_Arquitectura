@@ -12,7 +12,7 @@ Configuring a Hadoop cluster on Google Cloud and integrating it with an Elastics
 
 1. **Build a Dataproc Cluster**: Create a standalone or standard Dataproc cluster to run Hadoop.
 
-*Screenshot was provided after finalizing configuration*
+    *Screenshot was provided after finalizing configuration*
 
 2. **Download and Upload JARs**: Retrieve the ES-Hadoop and commons-httpclient JARs, then place them in a Google Storage bucket.
 
@@ -20,13 +20,13 @@ Configuring a Hadoop cluster on Google Cloud and integrating it with an Elastics
 
 4. **Elasticsearch VM**: Spin up a separate VM for Elasticsearch, open firewall ports 9200 and 5601 for both cluster and local access.
 
-*Screenshot was provided once the `elasticsearch.yml` configuration is visible*  
+    *Screenshot was provided once the `elasticsearch.yml` configuration is visible*  
 
 5. **Check Connectivity**: From the cluster, run `curl -I http://IP_Elastic_server:9200` to confirm the Hadoop node can reach Elasticsearch.
 
 6. **Configure Hive**: Edit `hive-site.xml` to add the Elasticsearch connection properties and point `hive.aux.jars.path` to the ES-Hadoop JARs.
 
-*Screenshot was provided after applying changes*
+    *Screenshot was provided after applying changes*
 
 7. **Restart Services**: Restart Hive (e.g., `sudo service hive-server2 restart`) so that the new settings and JARs are loaded.
 
@@ -34,11 +34,11 @@ Configuring a Hadoop cluster on Google Cloud and integrating it with an Elastics
 
 9. **Insert Data via Hadoop**: Perform a bulk insert from the Hadoop cluster and validate with `curl -X GET "http://IP-SERVER-ELASTIC:9200/alumnos/_search?pretty"`.
 
-*Screenshot was provided showing the query result*
+    *Screenshot was provided showing the query result*
 
 10. **Kibana Dashboard**: Access Kibana (port 5601), create a data view for `alumnos` and build a basic dashboard.
 
-*Screenshot was provided showing a simple visualization* 
+    *Screenshot was provided showing a simple visualization* 
 
 
 ## Author
